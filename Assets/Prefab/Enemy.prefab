@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 7246830322015697047}
   - component: {fileID: 7246830322015697045}
   - component: {fileID: 7246830322015697044}
+  - component: {fileID: -5546811234205198922}
   m_Layer: 2
   m_Name: Enemy
-  m_TagString: Enemy
+  m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +51,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -151,3 +153,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &-5546811234205198922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7246830322015697050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25336df9d7edb0847868dbacb79901e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 5
+  enemyAnimator: {fileID: 0}

@@ -6,10 +6,14 @@ public class SimpleFollow : MonoBehaviour
 {
     public GameObject target;
     Rigidbody2D rdb;
+    private SpriteRenderer sr;
+    private bool isFlipped;
     // Start is called before the first frame update
     void Start()
     {
         rdb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame
@@ -18,7 +22,17 @@ public class SimpleFollow : MonoBehaviour
         if (target)
         {
             Vector3 dif = target.transform.position - transform.position;
-            rdb.AddForce(dif);
+            if (dif.x < 0)
+            {
+                isFlipped = false;
+                sr.flipX = isFlipped;
+            }
+            else if (dif.x > 0)
+            {
+                isFlipped = true;
+                sr.flipX = isFlipped;
+            }
+            rdb.AddForce(dif*2);
         }
     }
 

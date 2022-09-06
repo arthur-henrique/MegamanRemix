@@ -4,23 +4,37 @@ using UnityEngine;
 
 public class Control : MonoBehaviour
 {
+    // Variaveis
+    // Componente que contém a animação
     public Animator anima;
+    // Float que regula o movimento em X
     float xmov;
+    // Componente que contém o RigidBody
     public Rigidbody2D rdb;
+    // Booleans que controlam Jump e DoubleJump
     bool jump,doublejump;
+    // Floats que controlam Cooldown the jump / Lado de pulo
     float jumptime, jumptimeside;
+    // Componente que contém os efeitos de particula
     public ParticleSystem fire;
+
+
+    //Funçoes
     void Start()
     {
 
     }
     void Update()
     {
+        // Altera a variavel de acordo com o Axis do Input (Semelhante ao Input Systen)
         xmov = Input.GetAxis("Horizontal");
+        // Se o Input do Jump for pressionado
         if (Input.GetButtonDown("Jump"))
         {
+            // E se o jumptime for menor do que o valor
             if (jumptime < 0.1f)
             {
+                // altera o boolean
                 doublejump = true;
             }
         }
